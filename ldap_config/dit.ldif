@@ -1,0 +1,68 @@
+dn: ou=staff,dc=demo,dc=com
+objectClass: organizationalUnit
+ou: staff
+
+dn: ou=groups,ou=staff,dc=demo,dc=com
+objectClass: organizationalUnit
+ou: groups
+
+# Creating LDAP users
+
+dn: uid=user01,ou=staff,dc=demo,dc=com
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+cn: demo user01
+sn: user01
+displayName: demo user01
+givenName: user01
+mail: user01@demo.com
+userPassword: user01
+
+dn: uid=user02,ou=staff,dc=demo,dc=com
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+cn: demo user02
+sn: user02
+displayName: demo user02
+givenName: user02
+mail: user02@demo.com
+userPassword: user02
+
+dn: uid=user03,ou=staff,dc=demo,dc=com
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+cn: demo user03
+sn: user03
+displayName: demo user03
+givenName: user03
+mail: user03@demo.com
+userPassword: user03
+
+dn: uid=user04,ou=staff,dc=demo,dc=com
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+objectClass: top
+cn: demo user04
+sn: user04
+displayName: demo user04
+givenName: user04
+mail: user04@demo.com
+userPassword: user04
+
+# Creating two groups
+dn: cn=eng,ou=groups,ou=staff,dc=demo,dc=com
+objectClass: groupOfNames
+objectClass: top
+cn: eng
+member: uid=user01,ou=staff,dc=demo,dc=com
+member: uid=user02,ou=staff,dc=demo,dc=com
+
+dn: cn=sales,ou=groups,ou=staff,dc=demo,dc=com
+objectClass: groupOfNames
+objectClass: top
+cn: sales
+member: uid=user03,ou=staff,dc=demo,dc=com
+member: uid=user04,ou=staff,dc=demo,dc=com
